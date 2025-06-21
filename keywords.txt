@@ -1,0 +1,51 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+RCB_Void KEYWORD3
+RCB_Bool KEYWORD3
+RCB_Int KEYWORD3
+RCB_Float KEYWORD3
+RCB_String KEYWORD3
+RCB_Json KEYWORD3
+
+CB_Void KEYWORD3
+CB_String KEYWORD3
+CB_Json KEYWORD3
+
+#######################################
+# Classes (KEYWORD1)
+#######################################
+
+WiaWiFi KEYWORD1
+WiaDB KEYWORD1
+WiaNet KEYWORD1
+WiaDbHelper KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+send KEYWORD2
+loop KEYWORD2
+init KEYWORD2
+
+addDataCB KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DEFAULT_HOSTNAME LITERAL1
+DEFAULT_GATEWAY LITERAL1
+DEFAULT_IP LITERAL1
+DEFAULT_SUBNET LITERAL1
+
+WIA_ENABLE_OTA LITERAL1
+WIA_OTA_PASSWORD_HASH LITERAL1
+
+WIA_ENABLE_NET_AYSNC LITERAL1
