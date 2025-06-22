@@ -38,7 +38,7 @@
 --------------------------------------------------------------------------------------- 
 */
   // Network 
-    #include "WiaNetworkBases.h"
+    #include "WiaNetworkBase.h"
   // WiFiManager
     #if WIA_ENABLE_NET_AYSNC
       #include <ESPAsyncWiFiManager.h>
