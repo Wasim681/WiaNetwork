@@ -38,7 +38,7 @@
 --------------------------------------------------------------------------------------- 
 */
   // Network 
-    #include "WiaNetwork.h"
+    #include "WiaNetworkBases.h"
   // WiFiManager
     #if WIA_ENABLE_NET_AYSNC
       #include <ESPAsyncWiFiManager.h>
@@ -87,6 +87,11 @@
     public:
       bool init() override{ 
         Serial.print("WiaNetwork::init"); Serial.println("start");
+
+        if(reset_pin!= -1){
+          pinMode(reset_pin, INPUT);
+        }
+
         ndb.init();
     
         bool saveConfig = false;
@@ -176,11 +181,14 @@
           ArduinoOTA.handle();
           yield();
         #endif
+        resetLoop();
+        
         }
       // send
       bool send(String data)             override{ (void)data; return false; }
       bool send(String data, String mac) override{ (void)data; (void)mac; return false; }
       
+      bool setResetPin(int pin){ reset_pin = pin;}
 
     protected:
       void setupOTA(){
@@ -209,11 +217,23 @@
             Serial.println("OTA Ready");
             yield();
         #endif
-      }            
+      }  
+      void resetLoop(){
+        if(reset_pin == -1) return;
+        auto state = digitalRead(reset_pin);
+        if(digitalRead(reset_pin) == HIGH) return;
+        delay(50); // debounce check
+        if(digitalRead(reset_pin) == HIGH) return;
+        delay(3000); // 3 sec low
+        if(digitalRead(reset_pin) == HIGH) return;
+        // reset creditional of WiFiManager
+        wm.resetSettings();
+        ESP.restart();
+      }          
   
     private:
       WiaNetCustomParams ndb;
-      
+      int reset_pin = -1;
       #if WIA_ENABLE_NET_AYSNC
         AsyncWebServer server{80};
         DNSServer dns;
