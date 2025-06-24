@@ -21,6 +21,7 @@ WiaWiFi KEYWORD1
 WiaDB KEYWORD1
 WiaNet KEYWORD1
 WiaDbHelper KEYWORD1
+MacConverter KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -32,6 +33,15 @@ init KEYWORD2
 
 addDataCB KEYWORD2
 
+RSSI	KEYWORD2
+MAC	KEYWORD2
+
+toStringMac	KEYWORD2
+toCharArrayMac	KEYWORD2
+toUIntMac	KEYWORD2
+equalMakes	KEYWORD2
+
+reg_net	KEYWORD2
 #######################################
 # Instances (KEYWORD2)
 #######################################
@@ -51,4 +61,5 @@ WIA_OTA_PASSWORD_HASH	LITERAL1
 
 WIA_ENABLE_NET_AYSNC	LITERAL1
 
-WIA_NET_WIFI   LITERAL1
+WIA_NET_WIFI  LITERAL1
+WIA_NET_NOW   LITERAL1
