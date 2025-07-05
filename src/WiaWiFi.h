@@ -188,7 +188,7 @@
       bool send(String data)             override{ (void)data; return false; }
       bool send(String data, String mac) override{ (void)data; (void)mac; return false; }
       
-      bool setResetPin(int pin){ reset_pin = pin;}
+      void setResetPin(int pin){ reset_pin = pin;}
 
     protected:
       void setupOTA(){
